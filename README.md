@@ -23,6 +23,7 @@ Everything that goes into the main branch of this project should work perfectly.
 - Pull from this 'master' repo often. Everything works better if everyone has the most up to date code to work with.
 - If something that someone else is working with is causing problems for you make an issue on GitHub.
 - Check the issues on GitHub often to make sure that there is nothing there for you.
+- Add descriptive commit messages. Say what you did!
 
 Resources:
 ----------
