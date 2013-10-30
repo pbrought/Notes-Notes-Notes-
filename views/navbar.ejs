@@ -1,0 +1,16 @@
+<div id="navbar">
+	<div id="logo">
+		<a href="/">Notes! Notes! Notes!</a>
+	</div>
+
+	<% if ( signedInUser ) { %>
+		<div id="nav-user">
+			<% signedInUser.avatar %>
+			<% signedInUser.name %>
+		</div>
+	<% } else if( loginPage ) {} else { %>
+		<div id="nav-login">
+			<a href="">Log In</a>
+		</div>
+	<% } %>
+</div>
