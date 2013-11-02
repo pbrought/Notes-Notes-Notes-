@@ -1,10 +1,79 @@
+/*Universal Styles*/
 * {
 	font-family: 'Segoe UI Light', 'Segoe UI Web Light', 'Segoe UI Web Regular', 'Segoe UI', 'Segoe UI Symbol', HelveticaNeue-Light, 'Helvetica Neue', Arial, sans-serif;
 }
 
-/*Nav bar*/
+a {
+	text-decoration: none !important;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	margin: 0 0 5px 0;
+}
+
+/*----------Nav bar----------*/
 #navbar {
 	height: 40px;
 	background-color: rgb(9, 74, 178);
 	color: white;
+}
+
+#navbar a {
+	color: white;
+}
+
+#logo-d {
+	height: 40px;
+	float: left;
+	padding-left: 10px;
+}
+#logo-d h1 {
+	height: 40px;
+}
+#logo-a {
+	height: 40px;
+	padding-left: 5px;
+	font-size: 21px;
+	line-height: 29px;
+	display: inline-block;
+	vertical-align: top;
+}
+#logo-s {
+	height: 40px;
+	padding-left: 5px;
+	font-size: 21px;
+	line-height: 40px;
+}
+
+#nav-user-d {
+	float: right;
+}
+#nav-user-s {
+
+}
+#nav-user-name {
+
+}
+#nav-user-pic {
+
+}
+
+#nav-login-d {
+	float: right;
+	padding: 0 10px 0 0;
+	height: 40px;
+}
+#nav-login-a {
+	padding: 10px 10px 0 10px;
+	height: 30px;
+	display: inline-block;
+}
+#nav-login-s {
+	vertical-align: top;
+	display: inline-block;
 }

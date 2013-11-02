@@ -1,16 +1,24 @@
 <div id="navbar">
-	<div id="logo">
-		<a href="/">Notes! Notes! Notes!</a>
+	<div id="logo-d">
+		<h1>
+			<a href="/" id="logo-a">
+				<span id="logo-s">Notes! Notes! Notes!</span>
+			</a>
+		</h1>
 	</div>
 
-	<% if ( signedInUser ) { %>
-		<div id="nav-user">
-			<% signedInUser.avatar %>
-			<% signedInUser.name %>
+	<% if ( typeof signedInUser !== 'undefined' ) { -%>
+		<div id="nav-user-d">
+			<span id="nav-user-s">
+				<span id="nav-user-name"><%= signedInUser.username -%></span>
+				<span id="nav-user-pic"><%= signedInUser.avatar -%></span>
+			</span>
 		</div>
-	<% } else if( loginPage ) {} else { %>
-		<div id="nav-login">
-			<a href="">Log In</a>
+	<% } else if( typeof loginPage !== 'undefined' ) {} else { -%>
+		<div id="nav-login-d">
+			<a href="" id="nav-login-a">
+				<span id="nav-login-s">Log In</span>
+			</a>
 		</div>
-	<% } %>
+	<% } -%>
 </div>
