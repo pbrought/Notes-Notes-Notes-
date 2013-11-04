@@ -50,30 +50,49 @@ h1 {
 	line-height: 40px;
 }
 
-#nav-user-d {
+#navUser-d {
 	float: right;
 }
-#nav-user-s {
+#navUser-s {
 
 }
-#nav-user-name {
+#navUserName {
 
 }
-#nav-user-pic {
+#navUserPic {
 
 }
 
-#nav-login-d {
+#navLogin-d {
 	float: right;
 	padding: 0 10px 0 0;
 	height: 40px;
 }
-#nav-login-a {
+#navLogin-a {
 	padding: 10px 10px 0 10px;
 	height: 30px;
 	display: inline-block;
 }
-#nav-login-s {
+#navLogin-s {
 	vertical-align: top;
 	display: inline-block;
+}
+
+/*----------Sidebar----------*/
+#sidebar {
+	width: 180px;
+	background-color: rgb(243, 243, 243);
+	height: 100%;
+}
+
+#searchField {
+
+}
+
+#searchButton {
+	background: transparent url('/images/searchIcon.png') 38px 0px;
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+	border: none;
 }

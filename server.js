@@ -3,6 +3,7 @@
  */
 
 var express = require( 'express' );
+var helpers = require( 'express-helpers' );
 var index = require( './routes' );
 var user = require( './routes/user' );
 var search = require( './routes/search' );
