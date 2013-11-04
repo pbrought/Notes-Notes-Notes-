@@ -14,7 +14,9 @@ Well styled code is REALLY important for readability. Please adhere to the follo
 - Don't forget semicolons, even though they are often optional they make code more readable an less prone to mistakes.
 - Close all HTML singleton tags with a /.
 - Close all HTML tags.
-- I'm sure there are other things that should be here, so keep an eye on this page :)
+- Order CSS properties alphabetically. The one exception is when properties are related (ie top and bottom should
+appear together at the bottom).
+- I'm sure there are other things that should be here, so keep an eye on this page :D
 
 Development Style:
 ------------------
