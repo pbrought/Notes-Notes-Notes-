@@ -2,8 +2,10 @@
 	<div id="searchContainer">
 		<% if ( typeof selectedNotebook === 'undefined' ) { %>
 			<form action="/search" method="get" target="_top" id="searchBox">
-				<input type="text" name="query" placeholder="Search Everything" id="searchField" />
-				<input title="Search" type="submit" id="searchButton" />
+				<label id="searchBox_label">
+					<input type="text" name="query" placeholder="Search Everything" id="searchField" />
+				</label>
+				<input title="Search" type="submit" id="searchButton" value />
 			</form>
 			<% } else { %>
 			<form action="/<%= selectedNotebook.id %>/search" method="get" target="_top">
