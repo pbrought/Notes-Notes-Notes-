@@ -3,7 +3,7 @@
  */
 
 exports.searchAll = function( req, res ) {
-	res.render( 'search All', { title : 'Search All' } );
+	res.render( 'search All', { title : 'Search All', query : "Query" } );
 };
 
 exports.searchNotebook = function( req, res ){

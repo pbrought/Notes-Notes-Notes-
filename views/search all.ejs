@@ -5,10 +5,14 @@
 	<link rel='stylesheet' href='/stylesheets/style.css'/>
 </head>
 <body>
-	<% include navbar.ejs %>
-	<% include sidebar.ejs %>
+	<% include partials/navbar.ejs %>
 
-	<h1 id="searchHeader">Search Results for <%= query %></h1>
-	<% include results.ejs %>
+	<div id="body">
+		<% include partials/sidebar.ejs %>
+
+		<div id="mainContent">
+			<h1 id="searchHeader">Search Results for <%= query %></h1>
+		</div>
+	</div>
 </body>
 </html>

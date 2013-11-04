@@ -5,10 +5,10 @@
 	<link rel='stylesheet' href='/stylesheets/style.css'/>
 </head>
 <body>
-	<% include navbar.ejs %>
-	<% include sidebar.ejs %>
+	<% include partials/navbar.ejs %>
+	<% include partials/sidebar.ejs %>
 
 	<h1 id="searchHeader">Search Results for <%= query %> from <% selectedNotebook.name %></h1>
-	<% include results.ejs %>
+	<% include partials/results.ejs %>
 </body>
 </html>
