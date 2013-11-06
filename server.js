@@ -31,6 +31,7 @@ if ( 'development' == app.get( 'env' ) ) {
 }
 
 app.get( '/', index.home );
+app.get( '/login', index.login );
 app.get( '/users', user.list );
 app.get( '/search', search.searchAll );
 app.get( '/:id/search', search.searchNotebook );
