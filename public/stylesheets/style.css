@@ -1,52 +1,6 @@
-/*----------Login and Splash-screen----------*/
-.btn-lg {
-    padding: 10px 16px;
-    font-size: 18px;
-    line-height: 1.33;
-    border-radius: 6px;
-}
-.btn-primary {
-    color: #ffffff;
-    background-color: #428bca;
-    border-color: #357ebd;
-}
-.btn-success {
-    color: #ffffff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-}
-.centered {
-     text-align: center;
-     display: block;
-     margin-left: auto;
-     margin-right: auto }
-.form-control {
-    display: block;
-    width: 100%;
-    height: 34px;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.428571429;
-    color: #555555;
-    vertical-align: middle;
-    background-color: #ffffff;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-}
-.form-group {
-    margin-bottom: 15px;
-}
 /*----------Universal Styles----------*/
 * {
 	font-family: "Segoe UI Light", "Segoe UI Web Light", "Segoe UI Web Regular", "Segoe UI", "Segoe UI Symbol", HelveticaNeue-Light, "Helvetica Neue", Arial, sans-serif;
-}
-
-input {
-	font-family: "Segoe UI", "Segoe UI Web Regular", "Segoe UI Symbol", "Helvetica Neue", "BBAlpha Sans", "S60 Sans", Arial, sans-serif;
 }
 
 a {
@@ -58,12 +12,16 @@ body {
 	padding: 0;
 }
 
+button:focus, input:focus, select:focus, textarea:focus {
+	outline: none;
+}
+
 h1 {
 	margin: 0 0 5px 0;
 }
 
-input:focus, select:focus, textarea:focus, button:focus {
-	outline: none;
+input {
+	font-family: "Segoe UI", "Segoe UI Web Regular", "Segoe UI Symbol", "Helvetica Neue", "BBAlpha Sans", "S60 Sans", Arial, sans-serif;
 }
 
 /*----------Nav bar----------*/
@@ -189,6 +147,10 @@ input:focus, select:focus, textarea:focus, button:focus {
 	top: 10px;
 }
 
+#searchBox:hover {
+	border-color: #8f8f8f;
+}
+
 #searchBox_label {
 	line-height: 19px;
 }
@@ -225,4 +187,53 @@ input:focus, select:focus, textarea:focus, button:focus {
 	left: 180px;
 	right: 0;
 	top: 0;
+}
+
+/*----------Login and Splash-screen----------*/
+.btn-lg {
+	padding: 10px 16px;
+	font-size: 18px;
+	line-height: 1.33;
+	border-radius: 6px;
+}
+
+.btn-primary {
+	color: #ffffff;
+	background-color: #428bca;
+	border-color: #357ebd;
+}
+
+.btn-success {
+	color: #ffffff;
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}
+
+.centered {
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #555555;
+	vertical-align: middle;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.form-group {
+	margin-bottom: 15px;
 }

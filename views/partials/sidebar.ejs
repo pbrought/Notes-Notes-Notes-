@@ -7,7 +7,7 @@
 				</label>
 				<input title="Search" type="submit" id="searchButton" value />
 			</form>
-			<% } else { %>
+		<% } else { %>
 			<form action="/<%= selectedNotebook.id %>/search" method="get" target="_top">
 				<label id="searchBox_label">
 					<input type="search" name="query" placeholder="Search <%= selectedNotebook.name %>" id="searchField" />
