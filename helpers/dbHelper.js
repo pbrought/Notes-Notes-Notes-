@@ -5,5 +5,5 @@
 var MongoClient = require( 'mongodb' ).MongoClient;
 
 exports.dbConn = function( callback ) {
-	MongoClient.connect( "mongodb://team326:notesnotesnotes@timm-allman.mynetgear.com:27017/notesjs", callback( err, db ));
-}
+	MongoClient.connect( "mongodb://team326:notesnotesnotes@timm-allman.mynetgear.com:27017/notesjs", callback);
+};

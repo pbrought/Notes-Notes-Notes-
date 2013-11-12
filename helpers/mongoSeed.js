@@ -18,9 +18,9 @@ function seedNotebooks() {
 }
 
 function shareNotebooks() {
-	var userC = db.users.count(),
+	var userC = db.users.count() - 1,
 		users = db.users.find();
-	for ( var i = 0; i < userC; i++ ) {
+	for ( var i = 0; i <= userC; i++ ) {
 		var userId = users[i]._id;
 		db.notebooks.update( { userId : userId }, { $push : { shared : { with : users[ userC - i ]._id, edit : true } } } );
 	}
@@ -36,10 +36,22 @@ function seedNotes() {
 }
 
 function shareNotes() {
-	var userC = db.users.count(),
+	var userC = db.users.count() - 1,
 		users = db.users.find();
-	for ( var i = 0; i < userC; i++ ) {
-		var user = users[i];
-		db.notebooks.update( { userId : user._id }, { $push : { shared : { with : users[ userC - i ]._id, edit : true } } } );
+	for ( var i = 0; i <= userC; i++ ) {
+		var userId = users[i]._id;
+		db.notes.update( { userId : userId }, { $push : { shared : { with : users[ userC - i ]._id, edit : true } } } );
 	}
+}
+
+function seedDb() {
+	db.users.drop();
+	db.notes.drop();
+	db.notebooks.drop();
+
+	seedUsers();
+	seedNotebooks();
+	seedNotes();
+	shareNotebooks();
+	shareNotes();
 }

@@ -2,32 +2,35 @@
 <tbody></tbody>
 </table>
 
-<div id="results">
-	<% for ( var n in results ) { %>
-	<div class="searchResult" id="<% n._id %>">
+<% console.dir( 'FROM VIEW' ) %>
+<% console.dir( results ) %>
+
+<div id="results" style="display:none;">
+	<% results.forEach(function( n ) { -%>
+	<div class="searchResult" id="<%= n._id %>">
 		<!-- TODO -->
 		<a href="#">
-				<span class="hoverWrapper">
-					<span class="itemTile">
-						<% if (n.type === 'note') { %>
-						<span class="noteIcon">
-								<img src="/images/noteIcon.png"/>
-							</span>
-						<% } else { %>
-						<span class="notebookIcon">
-								<img src="/images/notebookIcon.png"/>
-							</span>
-						<% } %>
-						<span class="namePlate">
-							<% n.title %>
+			<span class="hoverWrapper">
+				<span class="itemTile">
+					<% if (n.type === 'note') { -%>
+					<span class="noteIcon">
+							<img src="/images/noteIcon.png"/>
 						</span>
-					</span>
-					<span class="selectBox">
-						<input type="checkbox" class="checkbox"/>
-						<label></label>
+					<% } else { -%>
+					<span class="notebookIcon">
+							<img src="/images/notebookIcon.png"/>
+						</span>
+					<% } -%>
+					<span class="namePlate">
+						<%= n.title %>
 					</span>
 				</span>
+				<span class="selectBox">
+					<input type="checkbox" class="checkbox"/>
+					<label></label>
+				</span>
+			</span>
 		</a>
 	</div>
-	<% } %>
+	<% }) -%>
 </div>

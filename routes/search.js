@@ -8,25 +8,32 @@ var notebook = require( '../lib/notebook' );
 exports.searchAll = function( req, res ) {
 	var query = req.query.q;
 
-	var noteResults = note.find( query );
-	var notebookResults = notebook.find( query );
+	note.find( query, undefined, function( results, db ) {
+		var noteResults = results;
+		var noteDb = db;
 
-	var results = noteResults.concat( notebookResults );
+		notebook.find( query, undefined, function( results, db ) {
+			results = results.concat(noteResults);
 
-	results.sort( function( a, b ) {
-		if ( a.title == b.title ) {
-			return 0;
-		} else if ( a.title < b.title ) {
-			return -1;
-		} else {
-			return 1;
-		}
-	} );
+			results.sort( function( a, b ) {
+				if ( a.title == b.title ) {
+					return 0;
+				} else if ( a.title < b.title ) {
+					return -1;
+				} else {
+					return 1;
+				}
+			} );
 
-	res.render( 'search all', {
-		title : 'Search All',
-		query : query,
-		results : results
+			res.render( 'search all', {
+				title : 'Search All',
+				query : query,
+				results : results
+			} );
+
+			db.close();
+			noteDb.close();
+		} );
 	} );
 };
 
