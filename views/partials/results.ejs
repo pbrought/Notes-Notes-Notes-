@@ -1,11 +1,4 @@
-<table id="resultsContainer">
-<tbody></tbody>
-</table>
-
-<% console.dir( 'FROM VIEW' ) %>
-<% console.dir( results ) %>
-
-<div id="results" style="display:none;">
+<div id="nContainer" style="display:none;">
 	<% results.forEach(function( n ) { -%>
 	<div class="searchResult" id="<%= n._id %>">
 		<!-- TODO -->
@@ -13,11 +6,11 @@
 			<span class="hoverWrapper">
 				<span class="itemTile">
 					<% if (n.type === 'note') { -%>
-					<span class="noteIcon">
+						<span class="noteIcon">
 							<img src="/images/noteIcon.png"/>
 						</span>
 					<% } else { -%>
-					<span class="notebookIcon">
+						<span class="notebookIcon">
 							<img src="/images/notebookIcon.png"/>
 						</span>
 					<% } -%>
