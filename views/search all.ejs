@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title><%= title %></title>
-	<link rel='stylesheet' href='/stylesheets/style.css'/>
-</head>
-<body>
-	<% include partials/navbar.ejs %>
+<%- include partials/head.ejs %>
+<%- include partials/navbar.ejs %>
 
-	<div id="body">
-		<% include partials/sidebar.ejs %>
+<div id="body">
+	<%- include partials/sidebar.ejs %>
 
-		<div id="mainContent">
-			<div class="header">Search Results for <%= query %></div>
-			<% include partials/results.ejs %>
+	<div id="mainContent">
+		<div class="header">Search Results for <%= query %></div>
+		<div class="content">
+			<%- include partials/results.ejs %>
 			<div id="nContainer"></div>
 		</div>
 	</div>
-</body>
-</html>
+</div>
+
+<%- include partials/foot.ejs %>

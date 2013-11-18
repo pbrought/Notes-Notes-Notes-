@@ -1,19 +1,19 @@
-<div id="nContainer" style="display:none;">
-	<% results.forEach(function( n ) { -%>
+<div id="nHidden" style="display:none;">
+	<% results.forEach(function( n ) { %>
 	<div class="searchResult" id="<%= n._id %>">
 		<!-- TODO -->
 		<a href="#">
 			<span class="hoverWrapper">
 				<span class="itemTile">
-					<% if (n.type === 'note') { -%>
+					<% if (n.type === 'note') { %>
 						<span class="noteIcon">
 							<img src="/images/noteIcon.png"/>
 						</span>
-					<% } else { -%>
+					<% } else { %>
 						<span class="notebookIcon">
 							<img src="/images/notebookIcon.png"/>
 						</span>
-					<% } -%>
+					<% } %>
 					<span class="namePlate">
 						<%= n.title %>
 					</span>
@@ -25,5 +25,5 @@
 			</span>
 		</a>
 	</div>
-	<% }) -%>
+	<% }) %>
 </div>
