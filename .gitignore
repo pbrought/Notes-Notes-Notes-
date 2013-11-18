@@ -16,3 +16,5 @@ node_modules
 
 iisnode/
 web.config
+
+.idea/

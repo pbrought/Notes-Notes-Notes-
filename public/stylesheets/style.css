@@ -10,6 +10,8 @@ a {
 body {
 	margin: 0;
 	padding: 0;
+	max-width: 1940px;
+	min-width: 740px;
 }
 
 button:focus, input:focus, select:focus, textarea:focus {
