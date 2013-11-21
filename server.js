@@ -6,6 +6,7 @@ var express = require( 'express' );
 var index = require( './routes' );
 var user = require( './routes/user' );
 var search = require( './routes/search' );
+var shared = require('./routes/shared');
 var http = require( 'http' );
 var path = require( 'path' );
 
@@ -34,6 +35,13 @@ app.get( '/login', index.login );
 app.get( '/users', user.list );
 app.get( '/search', search.searchAll );
 app.get( '/:id/search', search.searchNotebook );
+app.get('/share', shared.share);
+app.post('/share/search', shared.search);
+app.post('/share/edit', shared.edit);
+app.post('/share/deleteUser', shared.deleteUser);
+app.post('/share/canEditChange', shared.canEditChange);
+app.post('/share/canViewChange', shared.canViewChange);
+app.post('/share/addUser', shared.addUser);
 
 http.createServer( app ).listen( app.get( 'port' ), function() {
 	console.log( 'Express server listening on port ' + app.get( 'port' ) );
