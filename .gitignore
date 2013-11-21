@@ -14,8 +14,11 @@ results
 npm-debug.log
 node_modules
 bower_components
+packages
 
 iisnode/
 web.config
 
 .idea/
+
+.DS_Store

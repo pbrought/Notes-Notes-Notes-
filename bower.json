@@ -1,4 +1,5 @@
 {
+	"name" : "notejs",
 	"dependencies" : {
 		"jquery" : "latest"
 	}

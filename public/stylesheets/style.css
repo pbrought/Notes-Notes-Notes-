@@ -26,6 +26,12 @@ input {
 	font-family: "Segoe UI", "Segoe UI Web Regular", "Segoe UI Symbol", "Helvetica Neue", "BBAlpha Sans", "S60 Sans", Arial, sans-serif;
 }
 
+svg {
+	width: 200px;
+	height: 200px;
+	viewBox: 0 0 200 200;
+}
+
 /*----------Nav bar----------*/
 #navbar {
 	background-color: rgb(9, 74, 178);
