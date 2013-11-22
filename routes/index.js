@@ -1,6 +1,7 @@
 /*
  * GET home page.
  */
+var userhomeurl = '../';
 var userdb = require('../lib/user/user.js');
 exports.home = function (req, res) {
     res.render('index', { title: 'Notes! Notes! Notes!'});
@@ -22,11 +23,12 @@ exports.submit = function (req, res) {
         else if (req.body['signup-password'].length > 12) {
             res.render('login', { title: 'Notes! Notes! Notes!', signuperrmsg: 'Maximum "Password" length is 12 characters'});
         }
-        else userdb.findUser(req.body['signup-email'], function (findreturn) {
-                if (findreturn > 0) {
+        else {
+            userdb.findUser(req.body['signup-email'], function (findreturn) {
+                if (typeof findreturn == "object") {
                     res.render('login', { title: 'Notes! Notes! Notes!', signuperrmsg: 'User already exists with provided e-mail'});
                 }
-                else if(findreturn < 0){
+                else if (findreturn < 0) {
                     res.render('login', { title: 'Notes! Notes! Notes!', signuperrmsg: 'Failed to access database'});
                 }
                 else {
@@ -37,17 +39,16 @@ exports.submit = function (req, res) {
                                 res.render('login', { title: 'Notes! Notes! Notes!', signuperrmsg: 'Failed to access database'});
                             }
                             else {
-                                //redirect to user home page with id stored in cookies as "userid"
-                                console.log(id);
+                                //redirect to user home page with id stored in cookies as "userid" warning: not a number
                                 res.cookie("userid", id);
-                                res.redirect('../userhome');
+                                res.redirect(userhomeurl);
                             }
                         }
                     );
                 }
-            })
+            });
+        }
     }
-
 
     else if (req.body['login-email']) {
         userdb.authent(req.body['login-email'], req.body['login-password'], function (returnid) {
@@ -59,9 +60,9 @@ exports.submit = function (req, res) {
                 res.render('login', { title: 'Notes! Notes! Notes!', loginerrmsg: 'Failed to access database'});
             }
             else {
-                //redirect to user home page with id stored in cookies as "userid"
+                //redirect to user home page with id stored in cookies as "userid" warning: not a number
                 res.cookie("userid", id);
-                res.redirect('../userhome');
+                res.redirect(userhomeurl);
             }
         });
     }
