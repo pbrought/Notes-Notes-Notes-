@@ -43,6 +43,7 @@ app.post( '/share/deleteUser', share.deleteUser );
 app.post( '/share/canEditChange', share.canEditChange );
 app.post( '/share/canViewChange', share.canViewChange );
 app.post( '/share/addUser', share.addUser );
+app.post( '/submit', index.submit );
 
 server.listen( app.get( 'port' ), function () {
 	console.log( 'Express server listening on port ' + app.get( 'port' ) );
