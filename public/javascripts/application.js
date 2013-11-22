@@ -19,7 +19,4 @@ $( function () {
 			container.append( thing );
 		}
 	}
-
-	//Searchbar
-	
 } );
