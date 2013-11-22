@@ -11,6 +11,7 @@ var express = require( 'express' ),
 	user = require( './routes/user' ),
 	search = require( './routes/search' ),
 	share = require( './routes/share' ),
+	notebook= require('./routes/notebook'),
 	path = require( 'path' );
 
 // all environments
@@ -43,7 +44,15 @@ app.post( '/share/deleteUser', share.deleteUser );
 app.post( '/share/canEditChange', share.canEditChange );
 app.post( '/share/canViewChange', share.canViewChange );
 app.post( '/share/addUser', share.addUser );
-app.post( '/submit', index.submit );
+app.get('/home', notebook.notebookHome);
+//app.get('/home/addNotebook', notebook.addNotebook);
+app.get('/homehelp', function(req, res){
+	res.render('homehelp');
+});
+app.get('/SelectedNotebookHelp', function(req, res){
+	res.render('SelectedNotebookHelp');
+});
+app.get('/SelectedNotebook', notebook.snb);
 
 server.listen( app.get( 'port' ), function () {
 	console.log( 'Express server listening on port ' + app.get( 'port' ) );

@@ -45,6 +45,15 @@ var initShare = function () {
 		window.location.replace( '/share' );
 	} );
 };
+var itemSelect = function(){
+$('.searchResult').click(function(){
+    $(this).toggleClass("highlighted");
+   	var check= $(this).find('.checkbox');
+   	check.prop('checked', !check.prop("checked"));
+   	$('.hmenu').css{"visibility":"visible"});
+
+});
+}
 
 var renderSearch = function ( resData, status ) {
 
@@ -55,4 +64,5 @@ $( function () {
 	beResponsive();
 	initSearch();
 	initShare();
+	itemSelect();
 } );
