@@ -21,7 +21,16 @@ var beResponsive = function () {
 };
 
 var initSearch = function () {
+	$( '#searchBox' ).on( 'submit', function () {
+		var input = $( '#searchField' ).val();
+		var url = $( '#searchField' ).action;
 
+		$.ajax( url, {
+			type : 'GET',
+			data : input,
+			success : renderSearch()
+		})
+	} );
 };
 
 var initShare = function () {
@@ -36,6 +45,11 @@ var initShare = function () {
 		window.location.replace( '/share' );
 	} );
 };
+
+var renderSearch = function ( resData, status ) {
+
+	beResponsive();
+}
 
 $( function () {
 	beResponsive();
