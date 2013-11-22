@@ -2,8 +2,8 @@
  * Created by tallman on 11/4/13.
  */
 
-//Responsive Things
 $( function () {
+	//Responsive Things
 	var things = $( 'div#nHidden' ).children(),
 		container = $( 'div#nContainer' ),
 		width = window.innerWidth,
@@ -13,10 +13,13 @@ $( function () {
 
 	for ( var i = 0; i < numTall; i++ ) {
 		for ( var j = 0; j < numWide && i * numWide + j <= numThings; j++ ) {
-			console.log(i + ',' + j + ',' + ((i * numWide) + j));
+			console.log( i + ',' + j + ',' + ((i * numWide) + j) );
 			var thing = $( things[i * numWide + j] );
 			thing.css( {left : j * 200 + 20, top : i * 80 + 10} );
 			container.append( thing );
 		}
 	}
+
+	//Searchbar
+	
 } );
