@@ -328,16 +328,15 @@ ul.topnav {
 	padding: 0 20px;	
 	margin: 0;
 	float: left;
-	width: 920px;
-	background: #222;
+	width: 500px;
 	font-size: 1.2em;
-	background: url(topnav_bg.gif) repeat-x;
+
 }
 ul.topnav li {
 	float: left;
 	margin: 0;	
 	padding: 0 15px 0 0;
-	position: relative; /*--Declare X and Y axis base for sub navigation--*/
+	position: relative; 
 }
 ul.topnav li a{
 	padding: 10px 5px;

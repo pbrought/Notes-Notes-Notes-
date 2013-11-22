@@ -11,6 +11,7 @@ var express = require( 'express' ),
 	user = require( './routes/user' ),
 	search = require( './routes/search' ),
 	share = require( './routes/share' ),
+	notebook= require('./routes/notebook'),
 	path = require( 'path' );
 
 // all environments
