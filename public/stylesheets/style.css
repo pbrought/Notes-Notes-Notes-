@@ -246,6 +246,13 @@ svg {
 	margin-right: auto
 }
 
+.error {
+    color: red;
+    font-size: 18px;
+    font-style:italic;
+    font-weight:bold;
+}
+
 .form-control {
 	display: block;
 	width: 100%;
