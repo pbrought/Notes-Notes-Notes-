@@ -9,6 +9,7 @@
 		</div>
 
 		<% if ( typeof signedInUser !== 'undefined' ) { %>
+		<%- include navbarmenu.ejs %>
 		<div id="navUser-d">
 			<span id="navUser-s">
 				<span id="navUserName"><%= signedInUser.username -%></span>
@@ -16,8 +17,9 @@
 			</span>
 		</div>
 		<% } else if( typeof loginPage !== 'undefined' ) {} else { %>
+		<%- include navbarmenu.ejs %>
 		<div id="navLogin-d">
-			<a href="" id="navLogin-a">
+			<a href="/login" id="navLogin-a">
 				<span id="navLogin-s">Log In</span>
 			</a>
 		</div>
