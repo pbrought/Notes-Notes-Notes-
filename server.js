@@ -2,15 +2,16 @@
  * Module dependencies.
  */
 
-var express = require( 'express' );
-var index = require( './routes' );
-var user = require( './routes/user' );
-var search = require( './routes/search' );
-var shared = require('./routes/shared');
-var http = require( 'http' );
-var path = require( 'path' );
-
-var app = express();
+var express = require( 'express' ),
+	app = express(),
+	http = require( 'http' ),
+	server = http.createServer( app ),
+	io = require( 'socket.io' ).listen( server ),
+	index = require( './routes' ),
+	user = require( './routes/user' ),
+	search = require( './routes/search' ),
+	share = require( './routes/share' ),
+	path = require( 'path' );
 
 // all environments
 app.set( 'port', process.env.PORT || 1337 );
@@ -35,14 +36,16 @@ app.get( '/login', index.login );
 app.get( '/users', user.list );
 app.get( '/search', search.searchAll );
 app.get( '/:id/search', search.searchNotebook );
-app.get('/share', shared.share);
-app.post('/share/search', shared.search);
-app.post('/share/edit', shared.edit);
-app.post('/share/deleteUser', shared.deleteUser);
-app.post('/share/canEditChange', shared.canEditChange);
-app.post('/share/canViewChange', shared.canViewChange);
-app.post('/share/addUser', shared.addUser);
+app.get( '/share', share.share );
+app.post( '/share/search', share.search );
+app.post( '/share/edit', share.edit );
+app.post( '/share/deleteUser', share.deleteUser );
+app.post( '/share/canEditChange', share.canEditChange );
+app.post( '/share/canViewChange', share.canViewChange );
+app.post( '/share/addUser', share.addUser );
 
-http.createServer( app ).listen( app.get( 'port' ), function() {
+server.listen( app.get( 'port' ), function () {
 	console.log( 'Express server listening on port ' + app.get( 'port' ) );
 } );
+
+io.sockets.on( 'connection', function ( socket ) {} );
