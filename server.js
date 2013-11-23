@@ -12,7 +12,9 @@ var express = require( 'express' ),
 	search = require( './routes/search' ),
 	share = require( './routes/share' ),
 	notebook= require('./routes/notebook'),
+	notes = require('./routes/edit'),
 	path = require( 'path' );
+
 
 // all environments
 app.set( 'port', process.env.PORT || 1337 );
@@ -53,11 +55,18 @@ app.get('/SelectedNotebookHelp', function(req, res){
 	res.render('SelectedNotebookHelp');
 });
 app.get('/SelectedNotebook', notebook.snb);
+app.get( '/:id/edit', notes.edit );
+app.get( '/:id/view', notes.view );
+app.post( '/getnote', notes.getNote );
+app.post( '/update', notes.update );
+
 
 server.listen( app.get( 'port' ), function () {
 	console.log( 'Express server listening on port ' + app.get( 'port' ) );
 } );
 
 io.sockets.on( 'connection', function ( socket ) {
-
+		socket.on('doc_change', function(doc) {
+		socket.broadcast.emit('view_update', doc);
+	});
 } );

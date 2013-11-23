@@ -31,7 +31,7 @@ function seedNotes() {
 		notebooks = db.notebooks.find();
 	for ( var i = 0; i < notebookC * 3; i++ ) {
 		var notebook = notebooks[i % notebookC];
-		db.notes.insert( { userId : notebook.userId, notebookId : notebook._id, title : 'title' + i, tags : [ 'tag' + i ] } );
+		db.notes.insert( { userId : notebook.userId, notebookId : notebook._id, title : 'title' + i, tags : [ 'tag' + i ], note : 'note' + i } );
 	}
 }
 
@@ -55,3 +55,6 @@ function seedDb() {
 	shareNotebooks();
 	shareNotes();
 }
+
+seedDb();
+
