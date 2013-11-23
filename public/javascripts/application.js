@@ -50,7 +50,7 @@ $('.searchResult').click(function(){
     $(this).toggleClass("highlighted");
    	var check= $(this).find('.checkbox');
    	check.prop('checked', !check.prop("checked"));
-   	$('.hmenu').css{"visibility":"visible"});
+   	$('.hmenu').css({"visibility":"visible"});
 
 });
 }

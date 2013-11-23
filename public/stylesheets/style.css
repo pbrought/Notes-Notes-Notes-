@@ -191,6 +191,7 @@ input {
 	right: 0;
 	top: 0;
 }
+
 #yourContent {
 	position: absolute;
 	bottom: 500px;
@@ -198,6 +199,7 @@ input {
 	right: 0;
 	top: 0;
 }
+
 #theirContent {
 	position: absolute;
 	bottom: 0;
@@ -256,10 +258,10 @@ input {
 }
 
 .error {
-    color: red;
-    font-size: 18px;
-    font-style:italic;
-    font-weight:bold;
+	color: red;
+	font-size: 18px;
+	font-style: italic;
+	font-weight: bold;
 }
 
 .form-control {
@@ -283,8 +285,6 @@ input {
 .form-group {
 	margin-bottom: 15px;
 }
-
-
 
 #results {
 	position: absolute;
@@ -313,45 +313,49 @@ input {
 	font-size: 21px;
 	display: block;
 }
+
 .icon {
 	margin-top: 5px;
 	margin-left: 5px;
 }
+
 .namePlate {
 	margin-left: 65px;
 	padding: 5px;
 }
+
 .highlighted {
-    border: 2px solid blue;
+	border: 2px solid blue;
 }
 
-.newClass{
+.newClass {
 	visibility: hidden
 }
 
-
 ul.topnav {
 	list-style: none;
-	padding: 0 20px;	
+	padding: 0 20px;
 	margin: 0;
 	float: left;
 	width: 500px;
 	font-size: 1.2em;
-
 }
+
 ul.topnav li {
 	float: left;
-	margin: 0;	
+	margin: 0;
 	padding: 0 15px 0 0;
-	position: relative; 
+	position: relative;
 }
-ul.topnav li a{
+
+ul.topnav li a {
 	padding: 10px 5px;
 	color: #fff;
 	display: block;
 	text-decoration: none;
 	float: left;
 }
-.hmenu{
+
+.hmenu {
 	visibility: hidden;
 }
