@@ -21,7 +21,13 @@ var beResponsive = function () {
 };
 
 var initSearch = function () {
+	var spinnerHTML = $( '#hiddenSpinner' ).remove().html();
+
 	$( '#searchBox' ).on( 'submit', function () {
+		console.log( spinnerHTML );
+		$( '#mainContent' ).html( spinnerHTML );
+		initSpinner();
+
 		var input = $( '#searchField' ).val();
 		var url = $( '#searchField' ).action;
 
@@ -29,7 +35,7 @@ var initSearch = function () {
 			type : 'GET',
 			data : input,
 			success : renderSearch()
-		})
+		} )
 	} );
 };
 
@@ -45,18 +51,16 @@ var initShare = function () {
 		window.location.replace( '/share' );
 	} );
 };
-var itemSelect = function(){
-$('.searchResult').click(function(){
-    $(this).toggleClass("highlighted");
-   	var check= $(this).find('.checkbox');
-   	check.prop('checked', !check.prop("checked"));
-   	$('.hmenu').css({"visibility":"visible"});
-
-});
+var itemSelect = function () {
+	$( '.searchResult' ).click( function () {
+		$( this ).toggleClass( "highlighted" );
+		var check = $( this ).find( '.checkbox' );
+		check.prop( 'checked', !check.prop( "checked" ) );
+		$( '.hmenu' ).css( {"visibility" : "visible"} );
+	} );
 }
 
 var renderSearch = function ( resData, status ) {
-
 	beResponsive();
 }
 
