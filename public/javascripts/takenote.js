@@ -23,6 +23,7 @@ $(document).ready(function () {
 		data: { _id : id},
 	}).done(function(d){
 		console.log("Got document");
+		console.log(d);
 		doc = d;
 		updateDoc(doc);
 	});

@@ -52,13 +52,40 @@ var initShare = function () {
 	} );
 };
 var itemSelect = function () {
+	
+
 	$( '.searchResult' ).click( function () {
 		$( this ).toggleClass( "highlighted" );
 		var check = $( this ).find( '.checkbox' );
 		check.prop( 'checked', !check.prop( "checked" ) );
+		
+		if( $('.highlighted').length === 1){
 		$( '.hmenu' ).css( {"visibility" : "visible"} );
+			$('#open').removeClass('disabled');
+			if(window.location.href.indexOf("home") > -1){
+			var newlink =  '/' + $('.highlighted')[0].id + '/SelectedNotebook';
+			$('#link').prop('href', newlink);
+		}
+		else if(window.location.href.indexOf("Selected") > -1){
+			var newlink =  '/' + $('.highlighted')[0].id + '/edit';
+			$('#link').prop('href', newlink);
+		}
+	}
+	
+
+		else if($('.highlighted').length > 1){
+			$('#open').addClass('disabled');
+			$('#link').removeAttr('href');
+			}
+
+		else if($('.highlighted').length === 0){
+			$( '.hmenu' ).css( {"visibility" : "hidden"} );
+			$('#open').removeClass('disabled');
+			
+		}
+		
 	} );
-}
+};
 
 var renderSearch = function ( resData, status ) {
 	beResponsive();

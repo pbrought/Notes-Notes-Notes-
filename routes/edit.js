@@ -29,6 +29,7 @@ exports.getNote = function(req, res) {
 
 };
 
+
 exports.update = function(req, res) {
 	var doc;
 	if(req.body){

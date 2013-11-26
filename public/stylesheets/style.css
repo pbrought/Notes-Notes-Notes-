@@ -359,3 +359,6 @@ ul.topnav li a {
 .hmenu {
 	visibility: hidden;
 }
+.disabled {
+	opacity:.2;
+}
