@@ -1,7 +1,7 @@
 /**
  * Created by timm on 11/21/13.
  */
-var constants = new Object();
+var constants = {};
 var dots = [];
 var timer;
 var curDot;
@@ -60,10 +60,13 @@ function initSpinner () {
 		appendDot( dots[i], spinner );
 	}
 
+	var svgElem = document.getElementById('svgElem');
 	var X = (window.innerWidth - $( '#sidebar' ).width()) / 2 - ( constants.size + constants.r ) / 2;
 	var Y = 20;
 
-	$( '#svgElem' ).css( { 'x' : X + 'px', 'y' : Y + 'px' } );
+	svgElem.style.position = 'absolute';
+	svgElem.style.left = X;
+	svgElem.style.top = Y;
 
 	loadDots();
 
