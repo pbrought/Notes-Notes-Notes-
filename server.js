@@ -48,8 +48,8 @@ app.post( '/share/canEditChange', share.canEditChange );
 app.post( '/share/canViewChange', share.canViewChange );
 app.post( '/share/addUser', share.addUser );
 app.get('/home', notebook.notebookHome);
-//app.get('/home/addNotebook', notebook.addNotebook);
-//app.get('/SelectedNotebook/addnote', notebook.addNote);
+//app.post('/home/addNotebook', notebook.addNotebook);
+app.post('/SelectedNotebook/addnote', notebook.addNote);
 
 app.get('/homehelp', function(req, res){
 	res.render('homehelp');
@@ -59,9 +59,10 @@ app.get('/:id/SelectedNotebook', notebook.snb);
 app.get( '/:id/edit', notes.edit );
 app.get( '/:id/view', notes.view );
 app.post( '/getnote', notes.getNote );
+app.post( '/grabnotes', notebook.grabNotes );
 app.post( '/update', notes.update );
 app.post('/getnotebook', notebook.getNB);
-
+app.post('/home/delete', notebook.removeNotebook);
 
 
 server.listen( app.get( 'port' ), function () {

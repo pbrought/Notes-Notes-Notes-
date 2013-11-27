@@ -58,21 +58,16 @@ var itemSelect = function () {
 		$( this ).toggleClass( "highlighted" );
 		var check = $( this ).find( '.checkbox' );
 		check.prop( 'checked', !check.prop( "checked" ) );
-		
+
+	if(window.location.href.indexOf("home") > -1){
 		if( $('.highlighted').length === 1){
 		$( '.hmenu' ).css( {"visibility" : "visible"} );
-			$('#open').removeClass('disabled');
-			if(window.location.href.indexOf("home") > -1){
-			var newlink =  '/' + $('.highlighted')[0].id + '/SelectedNotebook';
-			$('#link').prop('href', newlink);
-		}
-		else if(window.location.href.indexOf("Selected") > -1){
-			var newlink =  '/' + $('.highlighted')[0].id + '/edit';
-			$('#link').prop('href', newlink);
-		}
+		$('#open').removeClass('disabled');
+		var newlink =  '/' + $('.highlighted')[0].id + '/SelectedNotebook';
+		$('#link').prop('href', newlink);
+	
 	}
 	
-
 		else if($('.highlighted').length > 1){
 			$('#open').addClass('disabled');
 			$('#link').removeAttr('href');
@@ -83,6 +78,32 @@ var itemSelect = function () {
 			$('#open').removeClass('disabled');
 			
 		}
+	}
+
+		if(window.location.href.indexOf("Selected") > -1){
+			if( $('.highlighted').length === 1){
+			$( '.hmenu' ).css( {"visibility" : "visible"} );
+			$( '.smenu' ).css( {"visibility" : "visible"} );
+			$('.smenu').removeClass('disabled');
+			var newlink =  '/' + $('.highlighted')[0].id + '/edit';
+			$('.links').prop('href', newlink);
+		}
+
+	
+
+		else if($('.highlighted').length > 1){
+			$('.smnenu').addClass('disabled');
+			$('.links').removeAttr('href');
+			}
+
+		else if($('.highlighted').length === 0){
+			$( '.hmenu' ).css( {"visibility" : "hidden"} );
+			$( '.smenu' ).css( {"visibility" : "hidden"} );
+			$('.links').removeClass('disabled');
+			
+		}
+	}
+	
 		
 	} );
 };

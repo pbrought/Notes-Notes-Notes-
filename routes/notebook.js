@@ -43,9 +43,27 @@ notebook.listThem(function( results, db){
 };
 
 exports.snb = function(req, res){	
-res.render( 'selectednotebook', { id: req.params.id});
-			
-		} ;
+var query = req.params.id;
+note.find(query, "bunga", function(results, db){
+	var noteResults = results;
+	var noteDB = db;
+
+			noteResults.sort( function( a, b ) {
+				if ( a.title == b.title ) {
+					return 0;
+				} else if ( a.title < b.title ) {
+					return -1;
+				} else {
+					return 1;
+				}
+			} );
+			res.render( 'selectednotebook', { id: req.params.id, results: noteResults});
+
+			db.close();
+			noteDB.close();
+		});
+			};
+		
 
 
 
@@ -65,4 +83,66 @@ exports.getNB = function(req, res){
 
 };
 
+exports.addNote = function(req, res){
+	var notebookID;
+	if ( req.body ) {
+		notebookID = req.body._id;
+		}
+	note.addNote(notebookID, function(err, item){
+		if(err)
+			console.error("db failed: " + err);
+		else{
+			res.contentType('application/json');
+			res.send(item);
+		}
+	});
 
+};
+exports.removeNotebook = function ( req, res ) {
+
+	if ( req.body ) {
+		var userID = req.body.data;
+
+		notebook.remove( userID, function ( err, docs ) {
+			if ( err ) {
+				console.error( 'db failed: ' + err );
+			}
+			else {
+				res.send( new Array() );
+			}
+		} );
+
+	}
+}
+exports.removeNote= function ( req, res ) {
+
+	if ( req.body ) {
+		var userID = req.body.data;
+
+		note.remove( userID, function ( err, docs ) {
+			if ( err ) {
+				console.error( 'db failed: ' + err );
+			}
+			else {
+				res.send( new Array() );
+			}
+		} );
+
+	}
+}
+
+exports.grabNotes = function(req, res) {
+	var id;
+	if(req.body){
+		id = req.body._id;
+		}
+	note.grabNotes(id, function(err, item){
+		if(err)
+			console.error("db failed: " + err);
+		else{
+			res.contentType('application/json');
+			res.send(item);
+		}
+	});
+
+};

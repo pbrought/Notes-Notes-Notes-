@@ -17,7 +17,7 @@
 </head>
 <body>
 <% include partials/spinner.ejs %>
-<%- include partials/homesnbnavbar.ejs %>
+<%- include partials/selectednavbar.ejs %>
 
 <div id='body'>
 <%- include partials/sidebar.ejs %>
@@ -25,7 +25,7 @@
 	<div id="mainContent">
 		<div class="header"></div>
 		<div class="content">
-
+<%- include partials/results.ejs %> 
 			<div id="nContainer"></div>
 		</div>
 	</div>
