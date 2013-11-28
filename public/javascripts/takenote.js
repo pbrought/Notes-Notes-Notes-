@@ -17,16 +17,17 @@ $( document ).ready( function () {
 	var title = $( "#title" );
 	var title_i = $( "#title_input" );
 
-	$.ajax( {
-		type : "POST",
-		url : '/getnote',
-		data : { _id : id},
-	} ).done( function ( d ) {
-			console.log( "Got document" );
-			doc = d;
-			updateDoc( doc );
-		} );
-
+	$.ajax({
+		type: "POST",
+		url: '/getnote',
+		data: { _id : id},
+	}).done(function(d){
+		console.log("Got document");
+		console.log(d);
+		doc = d;
+		updateDoc(doc);
+	});
+ 	
 	var socket = io.connect();
 
 	socket.on( "connect", function () {
