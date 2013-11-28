@@ -1,9 +1,12 @@
 /**
  * Created by tallman on 11/4/13.
  */
+/*jslint browser : true*/
+/*global $, jQuery*/
 
 //Responsive Things
 var beResponsive = function () {
+	"use strict";
 	var things = $( 'div#nHidden' ).children(),
 		container = $( 'div#nContainer' ),
 		width = window.innerWidth,
@@ -21,6 +24,7 @@ var beResponsive = function () {
 };
 
 var initSearch = function () {
+	"use strict";
 	var spinnerHTML = $( '#hiddenSpinner' ).remove().html();
 
 	$( '#searchBox' ).on( 'submit', function () {
@@ -40,6 +44,7 @@ var initSearch = function () {
 };
 
 var initShare = function () {
+	"use strict";
 	$( '#item_to_share' ).bind( 'click', function () {
 		var conf = window.confirm( "Choose new notebook to share?" );
 		if ( conf ) {
@@ -52,6 +57,7 @@ var initShare = function () {
 	} );
 };
 var itemSelect = function () {
+	"use strict";
 	$( '.searchResult' ).click( function () {
 		$( this ).toggleClass( "highlighted" );
 		var check = $( this ).find( '.checkbox' );
@@ -61,10 +67,12 @@ var itemSelect = function () {
 }
 
 var renderSearch = function ( resData, status ) {
+	"use strict";
 	beResponsive();
 }
 
 $( function () {
+	"use strict";
 	beResponsive();
 	initSearch();
 	initShare();
