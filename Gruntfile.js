@@ -33,7 +33,7 @@ module.exports = function ( grunt ) {
 		},
 		cssmin : {
 			options : {
-				banner : '/* <%= pkg.name %> <%= grunt.template.today("mm-dd-yyyy") %> */',
+				banner : '/*<%= pkg.name %> <%= grunt.template.today("mm-dd-yyyy") %>*/',
 				report : 'min'
 			},
 			minifycss : {
@@ -44,7 +44,7 @@ module.exports = function ( grunt ) {
 		},
 		uglify : {
 			options : {
-				banner : '/* <%= pkg.name %> <%= grunt.template.today("mm-dd-yyyy") %> */\n',
+				banner : '/*<%= pkg.name %> <%= grunt.template.today("mm-dd-yyyy") %>*/\n',
 				report : 'min'
 			},
 			minifyjs : {
