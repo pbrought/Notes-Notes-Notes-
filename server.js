@@ -30,7 +30,7 @@ app.use( app.router );
 app.use( express.static( path.join( __dirname, 'public' ) ) );
 
 // development only
-if ( 'development' == app.get( 'env' ) ) {
+if ( 'development' === app.get( 'env' ) ) {
 	app.use( express.errorHandler() );
 }
 
@@ -52,6 +52,7 @@ app.get('/home', notebook.notebookHome);
 app.post('/SelectedNotebook/addnote', notebook.addNote);
 
 app.get('/homehelp', function(req, res){
+	'use strict';
 	res.render('homehelp');
 });
 app.get('/:id/SelectedNotebook', notebook.snb);
@@ -66,11 +67,13 @@ app.post('/home/delete', notebook.removeNotebook);
 
 
 server.listen( app.get( 'port' ), function () {
+	'use strict';
 	console.log( 'Express server listening on port ' + app.get( 'port' ) );
 } );
 
 io.sockets.on( 'connection', function ( socket ) {
-		socket.on('doc_change', function(doc) {
+	'use strict';
+	socket.on('doc_change', function(doc) {
 		socket.broadcast.emit('view_update', doc);
 	});
 } );

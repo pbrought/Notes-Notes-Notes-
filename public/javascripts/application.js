@@ -1,8 +1,6 @@
 /**
  * Created by tallman on 11/4/13.
  */
-/*jslint browser : true*/
-/*global $, jQuery*/
 
 //Responsive Things
 var beResponsive = function () {
