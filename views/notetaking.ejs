@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/application.min.css">
 	<link rel="stylesheet" type="text/css" href="/stylesheets/notes_style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 	<script src="../javascripts/takenote.js"></script>
@@ -10,15 +10,15 @@
  	<script> var id = "<%= id %>"; </script>
 
 	<header>
-		<% include partials/navbar %>
 		<% include partials/navbar_edit %>
 	</header>
 
 	<div id = "body">
-		<% include partials/sidebar %>
+		<% include partials/editSidebar %>
 		<div id = "mainContent">
 			<div class = "header" id="title"></div>
-			<input type='text' id="title_input" name="title" style="display: none"/>
+			<input type='text' id="title_input" name="title" class="input_style" style="display: none"/>	
+			<input type='text' id="tag_input" name="tag" class="input_style" style="display: none; position: absolute;"/>
 			<div id = "document">
 				<textarea id = "text-editor">
 				</textarea>

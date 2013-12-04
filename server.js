@@ -59,6 +59,10 @@ app.get('/:id/SelectedNotebook', notebook.snb);
 //app.get('/SelectedNotebook', notebook.snb);
 app.get( '/:id/edit', notes.edit );
 app.get( '/:id/view', notes.view );
+app.get('/edithelp', function(req, res){
+	'use strict';
+	res.render('edithelp');
+})
 app.post( '/getnote', notes.getNote );
 app.post( '/grabnotes', notebook.grabNotes );
 app.post( '/update', notes.update );
@@ -73,7 +77,10 @@ server.listen( app.get( 'port' ), function () {
 
 io.sockets.on( 'connection', function ( socket ) {
 	'use strict';
+	socket.on('subscribe', function(data){
+		socket.join(data.id);
+	});
 	socket.on('doc_change', function(doc) {
-		socket.broadcast.emit('view_update', doc);
+		socket.broadcast.to(doc.id).emit('view_change');
 	});
 } );
